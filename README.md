@@ -30,3 +30,4 @@ The blog posts should be categorized on the first page, and we should be able to
 # evelynBlog
 # evelynBlog
 # blog
+# blog
