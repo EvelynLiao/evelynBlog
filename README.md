@@ -27,3 +27,4 @@ Use useContext to manage global state, a container's list of blog posts and its 
 When we create a new post/change a post, we should also be able to choose which category the post should belong to
 
 The blog posts should be categorized on the first page, and we should be able to choose which category we want to show in the list of posts
+# evelynBlog
