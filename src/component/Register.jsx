@@ -14,12 +14,16 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!isRegister) {
+      if (password !== confirmPassword) {
+        setErrorMessage("Password do not match");
+        return;
+      }
       setIsRegister(true);
-      try{
+      try {
         await createUser(email, password);
       } catch (error) {
-        setErrorMessage(error.message)
-        setIsRegister(false)
+        setErrorMessage(error.message);
+        setIsRegister(false);
       }
     }
   };
@@ -27,7 +31,7 @@ const Register = () => {
   return (
     <div>
       {userLoggedIn && <Navigate to={"/"} replace={true} />}
-      
+
       <main className="w-full mt-20 flex self-center place-content-center place-items-center">
         <div className="w-96 space-y-5 p-6 shadow-xl border rounded-xl">
           <div className="text-center mb-6">

@@ -1,6 +1,6 @@
-import { useContext, useState } from "react"
+import { useContext, useState } from "react";
 import { Navigate, Link } from "react-router-dom";
-import { AuthContext} from "../context/AuthContext"
+import { AuthContext } from "../context/AuthContext";
 import { signInUser } from "../firebase/authFunctions";
 
 const LogIn = () => {
@@ -14,7 +14,12 @@ const LogIn = () => {
     e.preventDefault();
     if (!isSignIn) {
       setIsSingIn(true);
-      await signInUser(email, password);
+      try {
+        await signInUser(email, password);
+      } catch (error) {
+        setErrorMessage(error.message);
+        setIsSingIn(false);
+      }
     }
   };
 
@@ -25,7 +30,7 @@ const LogIn = () => {
       <main className="mt-20 w-full flex self-center place-content-center place-items-center">
         <div className="w-96 space-y-5 p-6 shadow-xl border rounded-xl">
           <div className="text-center">
-            <div >
+            <div>
               <h3 className="text-xl font-semibold sm:text-2xl">
                 Welcome back
               </h3>
@@ -88,4 +93,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn
+export default LogIn;
