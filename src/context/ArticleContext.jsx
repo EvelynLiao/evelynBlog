@@ -3,7 +3,6 @@ import { createContext, useState, useEffect } from "react";
 export const ArticleContext = createContext();
 
 export const ArticleProvider = (props) => {
-  
   const [articles, setArticles] = useState(
     JSON.parse(localStorage.getItem("articles")) || [
       {
@@ -15,7 +14,7 @@ export const ArticleProvider = (props) => {
         title: "Intro to React",
         preRead: "In the world of web development...",
         mainText:
-          "In the world of web development, creating dynamic and interactive user interfaces is paramount. Enter React, a JavaScript library developed by Facebook that has revolutionized the way developers approach building UI components. With its declarative syntax, component-based architecture, and efficient rendering, React has become the go-to choice for many modern web applications.",
+          "In the world of web development, creating dynamic and interactive user interfaces is paramount.<br><br>Enter React, a JavaScript library developed by Facebook that has revolutionized the way developers approach building UI components.\n\nWith its declarative syntax, component-based architecture, and efficient rendering, React has become the go-to choice for many modern web applications.",
       },
       {
         id: 2,
@@ -53,7 +52,7 @@ export const ArticleProvider = (props) => {
   );
 
   useEffect(() => {
-    localStorage.setItem("articles", JSON.stringify(articles))
+    localStorage.setItem("articles", JSON.stringify(articles));
   }, [articles]);
 
   return (
@@ -62,5 +61,3 @@ export const ArticleProvider = (props) => {
     </ArticleContext.Provider>
   );
 };
-
-  

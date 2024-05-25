@@ -5,13 +5,13 @@ import { getAuth } from "firebase/auth";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBJt_5Coaewi9TDeeb8M0t_yrv72-Khl8M",
-  authDomain: "evelynuxf.firebaseapp.com",
-  projectId: "evelynuxf",
-  storageBucket: "evelynuxf.appspot.com",
-  messagingSenderId: "933105928167",
-  appId: "1:933105928167:web:2c2f0b975b785c37635f42",
-  measurementId: "G-64D3EMK8GJ",
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID,
 };
 
 

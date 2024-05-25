@@ -15,7 +15,12 @@ const Register = () => {
     e.preventDefault();
     if (!isRegister) {
       setIsRegister(true);
-      await createUser(email, password);
+      try{
+        await createUser(email, password);
+      } catch (error) {
+        setErrorMessage(error.message)
+        setIsRegister(false)
+      }
     }
   };
 
